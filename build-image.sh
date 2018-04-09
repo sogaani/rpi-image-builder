@@ -58,5 +58,7 @@ mv "${FINAL_IMAGE_NAME}" "${GATEWAY_IMAGE_NAME}"
 zip "image/${GATEWAY_IMAGE_NAME}.zip" "${GATEWAY_IMAGE_NAME}"
 (cd image; sha256sum "${GATEWAY_IMAGE_NAME}.zip" > "${GATEWAY_IMAGE_NAME}.zip.sha256sum")
 
+cp openzwave.tar.gz gateway.tar.gz image
+
 echo "Image     download link is: https://s3-us-west-1.amazonaws.com/mozillagatewayimages/images/${GATEWAY_IMAGE_NAME}.zip"
 echo "sha256sum download link is: https://s3-us-west-1.amazonaws.com/mozillagatewayimages/images/${GATEWAY_IMAGE_NAME}.zip.sha256sum"
